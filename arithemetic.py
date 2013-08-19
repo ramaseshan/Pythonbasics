@@ -1,6 +1,5 @@
 #All Arithemetic Operations with python
-a=0
-b=0
+
 def add(a,b):
     print(a+b)
     ch=raw_input("Want to try again ?");
@@ -51,5 +50,6 @@ def options():
         ch=raw_input("Want to try again ?");
         if ch=='y':
             options()
-    
+a=0
+b=0
 options()
