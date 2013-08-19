@@ -1,39 +1,55 @@
-
 #All Arithemetic Operations with python
-print("Welcome to the Arithemetic Operations World")
-options()    #Getting Error Here.
+a=0
+b=0
+def add(a,b):
+    print(a+b)
+    ch=raw_input("Want to try again ?");
+    if ch=='y':
+        options()
 
-def add():
-	print(a+b)
-def sub():
-	print(a-b)
-def mul():
-	print(a*b)
-def div():
-	print(a/b)
+def sub(a,b):
+    print(a-b)
+    ch=raw_input("Want to try again ?");
+    if ch=='y':
+        options()
+
+def mul(a,b):
+    print(a*b)
+    ch=raw_input("Want to try again ?");
+    if ch=='y':
+        options()
+
+def div(a,b):
+    print(float(a)/float(b))
+    ch=raw_input("Want to try again ?");
+    if ch=='y':
+        options()
 
 def options():
-	print("Enter Two numbers for Arithemitic Operations:")
-	a=input("Enter the First Number: ")
-	b=input("Enter the Second Number: ")
-	choice=input("Enter the Choice \n 1.Addition \n 2.Subtraction \n 3.Multiplication \n 4.Division\n 5.Quit\n")
-	perform(choice)    # Error: I want to pass choice to perform function so that it will work according to the choice
+    
+    print("Welcome to the Arithemetic Operations World")
+    choice=input("Enter the Choice \n 1.Addition \n 2.Subtraction \n 3.Multiplication \n 4.Division\n 5.Quit\n")
+    if choice < 5:
+        print("Enter Two numbers for Arithemitic Operations:")
+        a=input("Enter the First Number: ")
+        b=input("Enter the Second Number: ")
+        if choice == 1:
+            add(a,b)
+        elif choice == 2 :
+            sub(a,b)
+        elif choice == 3:
+            mul(a,b)
+        elif choice == 4:
+         div(a,b)
 
-def perform(choice):
-	if choice!=5:
-		if choice == 1:
-			add()
-		elif choice == 2:
-			sub()
-		elif choice == 3:
-			mul()
-		elif choice == 4:
-			div()
-
-	elif choice==5:
-		import sys;
-		sys.exit(0)
-	else:
-		print("Wrong Option");
-		options()
-
+    elif choice==5:
+        import sys;
+        sys.exit();
+         
+    elif choice>5 :
+        print("Wrong Option");
+        ch=raw_input("Want to try again ?");
+        if ch=='y':
+            options()
+    
+options()
